@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MinionsService } from 'src/app/minions/minions.service';
 import { LoginServicioService } from '../login/login-servicio.service';
 import { Router } from '@angular/router';
-import { Minions } from 'src/app/minions/minions';
+import { Minions, Minion } from 'src/app/minions/minions';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -14,7 +14,7 @@ export class CardsComponent implements OnInit {
 
   minions: Minions[] = [];
 
-  constructor(private minion: MinionsService, private loginService: LoginServicioService, public router: Router) { }
+  constructor(private minion: MinionsService, public router: Router) { }
 
   ngOnInit(): void {
     this.cargarMinions();
